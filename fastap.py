@@ -26,22 +26,22 @@ async def function1(x: int, y: int, operator: str):
     try:
         if operator == "*":
             task_id = str(uuid.uuid4())
-            cursor.execute("INSERT INTO users (task_id, result, status) VALUES (?, ?)",
+            cursor.execute("INSERT INTO users (task_id, result, status) VALUES (?, ?, ?)",
                            (task_id, x * y, 'Ready'))
             return task_id
         elif operator == "+":
             task_id = str(uuid.uuid4())
-            cursor.execute("INSERT INTO users (task_id, result, status) VALUES (?, ?)",
+            cursor.execute("INSERT INTO users (task_id, result, status) VALUES (?, ?, ?)",
                            (task_id, x + y, 'Ready'))
             return task_id
         elif operator == "-":
             task_id = str(uuid.uuid4())
-            cursor.execute("INSERT INTO users (task_id, result, status) VALUES (?, ?)",
+            cursor.execute("INSERT INTO users (task_id, result, status) VALUES (?, ?, ?)",
                            (task_id, x - y, 'Ready'))
             return task_id
         elif operator == "/":
             task_id = str(uuid.uuid4())
-            cursor.execute("INSERT INTO users (task_id, result, status) VALUES (?, ?)",
+            cursor.execute("INSERT INTO users (task_id, result, status) VALUES (?, ?, ?)",
                            (task_id, x / y, 'Ready'))
             return task_id
         else:
